@@ -189,9 +189,9 @@ input[type=radio] {
 }
 
 /* styling bootstrap cards (bios and schools) */
-.card:hover {
+/*.card:hover {
   box-shadow: 0 8px 20px 0 #C0B283;
-}
+}*/
 
 /* styling bootstrap cards (bios and schools) */
 .description {
