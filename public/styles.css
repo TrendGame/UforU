@@ -189,9 +189,9 @@ input[type=radio] {
 }
 
 /* styling bootstrap cards (bios and schools) */
-/*.card:hover {
+.card:hover {
   box-shadow: 0 8px 20px 0 #C0B283;
-}*/
+}
 
 /* styling bootstrap cards (bios and schools) */
 .description {
@@ -224,7 +224,7 @@ a:hover {
 
 /* School and bio cards */
 .card {
-  max-width: 100%;
+  width: 1170px;
   margin: auto;
   float: none;
   margin-top: 15px;
@@ -273,7 +273,7 @@ p {
 
 h6 {
   color: #373737;
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 15px;
