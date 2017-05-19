@@ -110,8 +110,8 @@ class Survey extends React.Component {
 
   render() {
     return (
-    <form className="container" onSubmit={this.handleFormSubmit}>
-		  <h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
+      <form className="container" onSubmit={this.handleFormSubmit}>
+        <h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
         <div className="row">
           <div className="col-md-6">
             <Select
