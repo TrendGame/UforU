@@ -5,6 +5,9 @@ const Header = () => {
         <div className="navbar-header">
           <a href={global.window.location.origin} className="navbar-brand">UforU</a>
         </div>
+        <div className="navbar-right navbar-brand">
+          <a href="#">Favorite Universities</a>
+        </div>
       </div>
     </nav>
   );
