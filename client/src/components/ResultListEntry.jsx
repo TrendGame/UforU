@@ -16,6 +16,7 @@ class ResultListEntry extends React.Component {
           </div>
           <Link className="college-name" to={`/college/${college.id}`}>{college.name}</Link>
           <p className="description">{college.description}</p>
+          <button className="glyphicon glyphicon-heart"></button>
         </div>
       </div>
     );
