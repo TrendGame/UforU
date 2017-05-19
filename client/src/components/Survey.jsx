@@ -111,7 +111,7 @@ class Survey extends React.Component {
   render() {
     return (
     <form className="container" onSubmit={this.handleFormSubmit}>
-				<h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
+		  <h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
         <div className="row">
           <div className="col-md-6">
             <Select
@@ -171,16 +171,16 @@ class Survey extends React.Component {
               options={this.state.sportsDivisionOptions}
               selectedOptions={this.state.sports_division} />
           </div>
-          <input
-            type="submit"
-            className="btn btn-primary"
-            value="Submit"/>
-          <button
-              className="btn btn-primary"
-              onClick={this.handleClearForm}>Clear form
-          </button>
         </div>
-    </form>
+        <div className="row">
+          <div className="col-xs-12">
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value="Submit"/>  
+          </div>
+        </div>
+      </form>
     );
   }
 }
