@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
 import io from 'socket.io-client';
+import Cookies from 'js-cookie';
 
 import Home from './components/Home.jsx';
 import Container from './components/Container.jsx';
@@ -18,7 +19,7 @@ class App extends React.Component {
   this.handleFav = this.handleFav.bind(this);    
   }
   handleFav(){
-    console.log("Yall DJ house parties.");
+    console.log(Cookies.get("prateek"));
   }
   render() {
     return (
