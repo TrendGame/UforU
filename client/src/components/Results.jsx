@@ -9,8 +9,13 @@ class Results extends React.Component {
     super(props);
 
     this.state = {
-      colleges: []
+      colleges: [],
+      favColleges: []
     };
+    let fav = this.state.favColleges.splice(0);
+    JSON.stringify(fav);
+    document.cookie = fav;
+    this.handleFavColleges = this.handleFavColleges.bind(this);
   }
 
   componentDidMount() {
@@ -46,11 +51,17 @@ class Results extends React.Component {
     });
   }
 
+  handleFavColleges(college) {
+    var prev = this.state.favColleges;
+    prev.push(college);
+    this.setState({favColleges: prev})
+  }
+
   render() {
     return (
       <div>
         {this.state.colleges.map((college, i) => {
-          return <ResultListEntry key={i} college={college} />;
+          return <ResultListEntry key={i} college={college} handleFav={this.handleFavColleges} />;
         })}
       </div>
     );
