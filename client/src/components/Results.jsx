@@ -12,10 +12,8 @@ class Results extends React.Component {
       colleges: [],
       favColleges: []
     };
-    let fav = this.state.favColleges.splice(0);
-    JSON.stringify(fav);
-    Cookies.set = ("prateek", "is cool");
     this.handleFavColleges = this.handleFavColleges.bind(this);
+    this.handleCookies = this.handleCookies.bind(this);
   }
 
   componentDidMount() {
@@ -52,9 +50,16 @@ class Results extends React.Component {
   }
 
   handleFavColleges(college) {
-    var prev = this.state.favColleges;
-    prev.push(college);
+    let prev = this.state.favColleges;
+    let col = college;
+    prev.push(col);
     this.setState({favColleges: prev})
+    this.handleCookies();
+  }
+
+  handleCookies(){
+    let fav = this.state.favColleges.slice(0);
+    Cookies.set("colleges", fav);
   }
 
   render() {
