@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
-
+import Cookies from 'js-cookie';
 import ResultListEntry from './ResultListEntry.jsx';
 
 class Results extends React.Component {
@@ -14,7 +14,7 @@ class Results extends React.Component {
     };
     let fav = this.state.favColleges.splice(0);
     JSON.stringify(fav);
-    document.cookie = fav;
+    Cookies.set = ("prateek", "is cool");
     this.handleFavColleges = this.handleFavColleges.bind(this);
   }
 
