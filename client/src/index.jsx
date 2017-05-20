@@ -10,10 +10,20 @@ import Survey from './components/Survey.jsx';
 import CommentsPage from './components/CommentsPage.jsx';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      favColleges: []
+    }
+  this.handleFav = this.handleFav.bind(this);    
+  }
+  handleFav(){
+    console.log("Yall DJ house parties.");
+  }
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path='/' component={Container}>
+        <Route path='/' handleFav={this.handleFav} component={Container}>
           <IndexRoute component={Home} />
           <Route path='results' component={Results} />
           <Route path='college/:id' component={CommentsPage}/>
