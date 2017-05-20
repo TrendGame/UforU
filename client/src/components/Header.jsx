@@ -1,3 +1,4 @@
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
 const Header = (props) => {
   return (
     <nav className="navbar navbar-inverse">
@@ -6,7 +7,7 @@ const Header = (props) => {
           <a href={global.window.location.origin} className="navbar-brand">UforU</a>
         </div>
         <div className="navbar-right navbar-brand">
-          <a onClick={props.handleFav}>Favorite Universities</a>
+          <Link to={`favorites`} className="favCols" activeClassName="active">Favorite Universities</Link>
         </div>
       </div>
     </nav>
