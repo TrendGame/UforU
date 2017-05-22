@@ -23,7 +23,7 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path='/' component={Container}>
           <IndexRoute component={Home} />
-          <Route path='results' fav={this.state.fav} component={Results} />
+          <Route path='results' component={Results} />
           <Route path='favorites' component={FavoritesPage}/>
           <Route path='college/:id' component={CommentsPage}/>
         </Route>
