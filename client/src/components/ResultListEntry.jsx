@@ -11,7 +11,6 @@ class ResultListEntry extends React.Component {
   }
 
   addToFav(e) {
-     console.log(this.props.college);
      this.props.handleFav(this.props.college);
   }
 

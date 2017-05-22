@@ -15,21 +15,13 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      fav: false,
-      favColleges: []
-    }
-    this.handleFav = this.handleFav.bind(this);    
-  }
-
-  handleFav(){
-    this.state.fav = true; 
-    console.log(Cookies.getJSON("colleges"));  
+    }  
   }
 
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path='/' handleFav={this.handleFav} component={Container}>
+        <Route path='/' component={Container}>
           <IndexRoute component={Home} />
           <Route path='results' fav={this.state.fav} component={Results} />
           <Route path='favorites' component={FavoritesPage}/>

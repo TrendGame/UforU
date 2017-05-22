@@ -52,9 +52,21 @@ class Results extends React.Component {
   handleFavColleges(college) {
     let prev = this.state.favColleges;
     let col = college;
-    prev.push(col);
-    this.setState({favColleges: prev})
-    this.handleCookies();
+    let alreadyIn = false;
+    for(let i = 0; i < prev.length; i++){
+      if(col === prev[i]){
+        alreadyIn = true;
+        console.log("Already Favorited");
+      }
+    }
+    if(alreadyIn === false){
+      prev.push(col);
+      this.setState({favColleges: prev})
+      this.handleCookies();
+    }else{
+      this.setState({favColleges: prev})
+      this.handleCookies();
+    }
   }
 
   handleCookies(){

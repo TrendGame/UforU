@@ -11,13 +11,20 @@ class FavoritesPage extends React.Component {
     this.state = {
       colleges: Cookies.getJSON("colleges")
     };
+	this.handleFavColleges = this.handleFavColleges.bind(this);
+  }
+
+  handleFavColleges(college) {
+    let prev = this.state.colleges;
+    let col = college;
+	console.log("Edge-Case Handled.");
   }
 
   render () {
     return (
       <div>
         {this.state.colleges.map((college, i) => {
-          return <ResultListEntry key={i} college={college}/>;
+          return <ResultListEntry key={i} college={college} handleFav={this.handleFavColleges}/>;
         })}
       </div>
     );
