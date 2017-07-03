@@ -307,3 +307,10 @@ h6 {
 footer {
   text-align: center;
 }
+
+.comments-list {
+  border: 5px solid #C0B283;
+  width: 1170px;
+  margin: 0px auto 20px auto;
+  padding: 20px 20px 25px 20px;
+}
