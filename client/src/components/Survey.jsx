@@ -112,7 +112,7 @@ class Survey extends React.Component {
       // this triple nested container is jank to figure out later
       // eric moved the new container-fluid wrapper from Home.jsx
       <div className="container-fluid">
-        <form className="container" onSubmit={this.handleFormSubmit}>
+        <form className="container survey-form" onSubmit={this.handleFormSubmit}>
     				<h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
             <div className="row">
               <div className="col-md-6">
