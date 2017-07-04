@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
-
+import Cookies from 'js-cookie';
 import ResultListEntry from './ResultListEntry.jsx';
 
 class Results extends React.Component {
@@ -9,8 +9,11 @@ class Results extends React.Component {
     super(props);
 
     this.state = {
-      colleges: []
+      colleges: [],
+      favColleges: []
     };
+    this.handleFavColleges = this.handleFavColleges.bind(this);
+    this.handleCookies = this.handleCookies.bind(this);
   }
 
   componentDidMount() {
@@ -46,11 +49,36 @@ class Results extends React.Component {
     });
   }
 
+  handleFavColleges(college) {
+    let prev = this.state.favColleges;
+    let col = college;
+    let alreadyIn = false;
+    for(let i = 0; i < prev.length; i++){
+      if(col === prev[i]){
+        alreadyIn = true;
+        console.log("Already Favorited");
+      }
+    }
+    if(alreadyIn === false){
+      prev.push(col);
+      this.setState({favColleges: prev})
+      this.handleCookies();
+    }else{
+      this.setState({favColleges: prev})
+      this.handleCookies();
+    }
+  }
+
+  handleCookies(){
+    let fav = this.state.favColleges.slice(0);
+    Cookies.set("colleges", fav);
+  }
+
   render() {
     return (
       <div>
         {this.state.colleges.map((college, i) => {
-          return <ResultListEntry key={i} college={college} />;
+          return <ResultListEntry key={i} college={college} handleFav={this.handleFavColleges} />;
         })}
       </div>
     );

@@ -4,6 +4,14 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRo
 class ResultListEntry extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      favColleges: ""
+    }
+    this.addToFav = this.addToFav.bind(this);
+  }
+
+  addToFav(e) {
+     this.props.handleFav(this.props.college);
   }
 
   render () {
@@ -16,6 +24,7 @@ class ResultListEntry extends React.Component {
           </div>
           <Link className="college-name" to={`/college/${college.id}`}>{college.name}</Link>
           <p className="description">{college.description}</p>
+          <button className="glyphicon glyphicon-heart" onClick={this.addToFav}></button>
         </div>
       </div>
     );

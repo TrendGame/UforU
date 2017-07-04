@@ -4,7 +4,7 @@ import Footer from './Footer.jsx';
 const Container = (props) => {
   return (
     <div>
-      <Header />
+      <Header/>
       {props.children}
       <Footer />
     </div>
