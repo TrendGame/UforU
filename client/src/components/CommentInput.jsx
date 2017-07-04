@@ -39,20 +39,28 @@ class CommentsInput extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          onChange={this.onUserInputChange}
-          value={this.state.user}
-        />
-        <input
-          type="text"
-          placeholder="Comment"
-          onChange={this.onCommentInputChange}
-          value={this.state.comment}
-        />
-        <button type="submit">Comment</button>
+      <form onSubmit={this.handleSubmit} className="chat-form">
+        <div className="row">
+          <div className="col-lg-2">
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={this.onUserInputChange}
+              value={this.state.user}
+            />
+          </div>
+          <div className="col-lg-9">
+            <input
+              type="text"
+              placeholder="Comment"
+              onChange={this.onCommentInputChange}
+              value={this.state.comment}
+            />
+          </div>
+          <div className="col-lg-1">
+            <button type="submit" className="chat-button">Comment</button>
+          </div>
+        </div>
       </form>
     );
   }
